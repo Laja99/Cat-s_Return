@@ -1,20 +1,18 @@
 using UnityEngine;
 
-public class MazeController : MonoBehaviour
+public class MazeRotation : MonoBehaviour
 {
-    public float gravityStrength = 9.8f;
+    public float rotationSpeed = 100f; // Ø³Ø±Ø¹Ø© Ø¯ÙˆØ±Ø§Ù† Ø§Ù„Ù…ØªØ§Ù‡Ø©
 
     void Update()
     {
-        // ÇáÍÕæá Úáì ÇáÅÏÎÇá ãä ÇáÃÓåã Ãæ WASD
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        // Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø£Ø³Ù‡Ù… Ø£Ùˆ AD Ù„ØªØ¯ÙˆÙŠØ± Ø§Ù„Ù…ØªØ§Ù‡Ø© Ø­ÙˆÙ„ Ù…Ø­ÙˆØ± Z
+        float rotationInput = -Input.GetAxis("Horizontal"); 
 
-        // ÊÛííÑ ÇÊÌÇå ÇáÌÇĞÈíÉ ÈäÇÁğ Úáì ÇáãíáÇä
-        Vector2 newGravity = new Vector2(moveX, moveY) * gravityStrength;
-        Physics2D.gravity = newGravity;
-
-        // ÇÎÊíÇÑí: ÊÏæíÑ ÇáãÊÇåÉ ÈÕÑíÇğ ÈÔßá ÈÓíØ áÊÚÒíÒ ÇáÔÚæÑ ÈÇáãíáÇä
-        transform.rotation = Quaternion.Euler(moveY * 5f, 0, -moveX * 5f);
+        // ØªØ¯ÙˆÙŠØ± Ø§Ù„Ù…ØªØ§Ù‡Ø© 360 Ø¯Ø±Ø¬Ø© Ø¨Ù†Ø§Ø¡Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø¯Ø®Ù„Ø§Øª
+        transform.Rotate(Vector3.forward * rotationInput * rotationSpeed * Time.deltaTime);
+        
+        // Ù†ØµÙŠØ­Ø©: Ø§ØªØ±Ùƒ Ø§Ù„Ø¬Ø§Ø°Ø¨ÙŠØ© Ø«Ø§Ø¨ØªØ© ÙÙŠ Ø¥Ø¹Ø¯Ø§Ø¯Ø§Øª Ø§Ù„Ù…Ø´Ø±ÙˆØ¹ (0, -9.8)
+        // Physics2D.gravity = new Vector2(0, -9.8f);
     }
 }
