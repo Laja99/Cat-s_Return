@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 1177875079}
   - component: {fileID: 1177875078}
   m_Layer: 0
-  m_Name: pat_0
+  m_Name: bat_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

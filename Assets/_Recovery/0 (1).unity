@@ -228,7 +228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 227, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &285277282
@@ -367,8 +367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0019684, y: -49}
-  m_SizeDelta: {x: 206.76, y: 59.1249}
+  m_AnchoredPosition: {x: 0.001928, y: -42.89}
+  m_SizeDelta: {x: 180.4597, y: 85.781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434639795
 MonoBehaviour:
@@ -434,8 +434,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -6990358492075253944, guid: 3ba1b51ed6fa6c640935fd79a4adc1ce, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 1337142596}
   - component: {fileID: 1337142595}
   m_Layer: 5
-  m_Name: play again
+  m_Name: play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,8 +488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038146973, y: 50}
-  m_SizeDelta: {x: 206.7639, y: 65}
+  m_AnchoredPosition: {x: 3.2895, y: 158.1233}
+  m_SizeDelta: {x: 213.3351, y: 281.2466}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337142595
 MonoBehaviour:
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1538534555}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
@@ -567,8 +567,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 5997463727640726720, guid: 9b437923131b71a4fb7c4b881a384c8f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -656,7 +656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.4102, y: -1.4357}
+  m_AnchoredPosition: {x: 220, y: -69}
   m_SizeDelta: {x: 187.8943, y: 32.8715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537323851
@@ -771,7 +771,6 @@ GameObject:
   - component: {fileID: 1538534552}
   - component: {fileID: 1538534551}
   - component: {fileID: 1538534554}
-  - component: {fileID: 1538534555}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -850,8 +849,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2145217395}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1538534554
@@ -898,18 +896,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &1538534555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538534550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bff11aab9571a304f97e22501c1b6799, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MainMenu
 --- !u!1 &2145217391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +992,7 @@ RectTransform:
   m_Children:
   - {fileID: 7003690}
   - {fileID: 1497770796}
-  m_Father: {fileID: 1538534553}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1018,3 +1004,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1538534553}
+  - {fileID: 2145217395}
