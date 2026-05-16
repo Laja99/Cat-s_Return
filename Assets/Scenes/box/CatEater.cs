@@ -1,43 +1,83 @@
 using UnityEngine;
 using TMPro; 
+using UnityEngine.SceneManagement; 
+using System.Collections; 
 
 public class CatEater : MonoBehaviour
 { 
     private Animator anim;
     private int ballCount = 0;
+    private bool isWon = false; 
+    private bool isGameOver = false;
 
     [Header("UI Settings")]
-    // خانة سحب نص الرقم في الـ Inspector
     [SerializeField] private TMP_Text scoreText; 
+    // 💡 Slot for the countdown timer text
+    [SerializeField] private TMP_Text timerText; 
 
     [Header("Audio Settings")]
-    [SerializeField] private AudioSource audioSource; // خانة سحب مكون الصوت (AudioSource)
-    [SerializeField] private AudioClip meowSound;     // خانة سحب ملف صوت المواء (AudioClip)
+    [SerializeField] private AudioSource audioSource; 
+    [SerializeField] private AudioClip meowSound;     
+    [SerializeField] private AudioClip winSound;     
+
+    [Header("Scene Settings")]
+    [SerializeField] private int winSceneIndex = 3; 
+    // 💡 Build Index slot for the Lose Scene
+    [SerializeField] private int loseSceneIndex = 4; 
+
+    [Header("Timer Settings")]
+    [SerializeField] private float timeRemaining = 15f; 
 
     void Start()
     {
         anim = GetComponent<Animator>();
         UpdateScoreUI();
+        UpdateTimerUI();
 
-        // فحص تلقائي: إذا نسيت سحب الـ AudioSource، يحاول الكود إيجاده بنفسه على نفس الكائن
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
         }
     }
 
+    void Update()
+    {
+        // Stop the timer if the player already won or if time ran out
+        if (isWon || isGameOver) return;
+
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+            UpdateTimerUI();
+        }
+        else
+        {
+            timeRemaining = 0;
+            UpdateTimerUI();
+            LoseGame();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (isWon || isGameOver) return;
+
         if (other.CompareTag("Ball"))
         {
-            anim.SetTrigger("Eat");
+            if (anim != null)
+            {
+                anim.SetTrigger("Eat");
+            }
+
             ballCount++;
             UpdateScoreUI();
-            
-            // استدعاء دالة تشغيل الصوت عند الأكل
             PlayMeowSound();
-
             Destroy(other.gameObject);
+
+            if (ballCount >= 6)
+            {
+                WinGame();
+            }
         }
     }
 
@@ -45,18 +85,49 @@ public class CatEater : MonoBehaviour
     {
         if (scoreText != null)
         {
-            // يعرض الرقم فقط
             scoreText.text = ballCount.ToString(); 
+        }
+    }
+
+    void UpdateTimerUI()
+    {
+        if (timerText != null)
+        {
+            // Displays time rounded to the nearest whole second
+            timerText.text = Mathf.CeilToInt(timeRemaining).ToString(); 
         }
     }
 
     void PlayMeowSound()
     {
-        // التأكد من أن الخانات ممتلئة بالـ Inspector قبل التشغيل لتجنب الأخطاء (Errors)
         if (audioSource != null && meowSound != null)
         {
-            // تشغيل الصوت مرة واحدة بدون تداخل
             audioSource.PlayOneShot(meowSound);
         }
+    }
+
+    void WinGame()
+    {
+        isWon = true; 
+        Debug.Log("Game Won! Starting Win Sequence...");
+        StartCoroutine(PlayWinSoundAndLoadScene());
+    }
+
+    void LoseGame()
+    {
+        isGameOver = true;
+        Debug.Log("Time is up! Loading Lose Scene...");
+        SceneManager.LoadScene(loseSceneIndex);
+    }
+
+    IEnumerator PlayWinSoundAndLoadScene()
+    {
+        if (audioSource != null && winSound != null)
+        {
+            audioSource.PlayOneShot(winSound);
+        }
+
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene(winSceneIndex);
     }
 }

@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Recovery/main menu.unity
     guid: d4f21475f7a336340ac6098d48a8b425
-  - enabled: 0
-    path: Assets/_Recovery/Game.unity
-    guid: 28b29a1ef03fe7146be61ac47b708a61
   - enabled: 1
     path: Assets/_Recovery/box.unity
     guid: 93108f98341f28a40ab0822d632eb562
-  - enabled: 0
-    path: Assets/_Recovery/0 (3).unity
-    guid: 5be5f3a582c03d041ab35621d681c8e0
+  - enabled: 1
+    path: Assets/_Recovery/Wall Jump.unity
+    guid: 7db5f1920d12034448a64415367a19e9
+  - enabled: 1
+    path: Assets/_Recovery/win.unity
+    guid: ce3c154804eb4c4468ffb0de3603f4d2
+  - enabled: 1
+    path: Assets/_Recovery/play again.unity
+    guid: a78d2399fa9d51849b312dfc41896fd8
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
