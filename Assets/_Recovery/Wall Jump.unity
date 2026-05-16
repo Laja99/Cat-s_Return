@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 143961229}
   - component: {fileID: 143961228}
   - component: {fileID: 143961232}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Building B
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -279,8 +279,13 @@ Transform:
   m_GameObject: {fileID: 143961227}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 36.8, y: 3.9, z: 0}
   m_LocalScale: {x: 25.331882, y: 23.953892, z: 1}
+=======
+  m_LocalPosition: {x: 3.01, y: 7.06, z: 0}
+  m_LocalScale: {x: 1, y: 23.953892, z: 1}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -345,6 +350,7 @@ GameObject:
   - component: {fileID: 185652606}
   - component: {fileID: 185652605}
   - component: {fileID: 185652604}
+  - component: {fileID: 185652610}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -359,7 +365,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185652603}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b1661a9ded53f648b25e3a7f5e4e57d, type: 3}
   m_Name: 
@@ -439,7 +445,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185652603}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5810b123116e3d54bb27b36460ca0518, type: 3}
   m_Name: 
@@ -524,8 +530,33 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 262933356}
+  - {fileID: 705753268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &185652610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185652603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0659cee5888fb41978be1c713866ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  speed: 8
+  jumpingPower: 10
+  wallSlidingSpeed: 2
+  rb: {fileID: 185652605}
+  groundCheck: {fileID: 262933356}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  wallCheck: {fileID: 705753268}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!1 &262933355
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +582,7 @@ Transform:
   m_GameObject: {fileID: 262933355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16, y: -1.32, z: 0}
+  m_LocalPosition: {x: -0.9, y: -1.3, z: 0}
   m_LocalScale: {x: 0.19036, y: 0.19036, z: 0.19036}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -713,6 +744,37 @@ MonoBehaviour:
   offset: {x: 0, y: 3.5, z: -10}
   followHorizontal: 0
   followVertical: 1
+--- !u!1 &705753267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 705753268}
+  m_Layer: 0
+  m_Name: Wall Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &705753268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705753267}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 185652609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1082059030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1094,7 @@ GameObject:
   - component: {fileID: 1865947337}
   - component: {fileID: 1865947336}
   - component: {fileID: 1865947339}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Building A
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1134,8 +1196,13 @@ Transform:
   m_GameObject: {fileID: 1865947334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -36.2935, y: 6.7932, z: 0}
   m_LocalScale: {x: 24.51876, y: 23.975492, z: 1}
+=======
+  m_LocalPosition: {x: -3.05, y: 7.16, z: 0}
+  m_LocalScale: {x: 1, y: 23.975492, z: 1}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
