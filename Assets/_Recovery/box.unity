@@ -3488,7 +3488,7 @@ MonoBehaviour:
   winSound: {fileID: 8300000, guid: 4de701ffa1bab41418dc0de9a3760cf2, type: 3}
   winSceneIndex: 3
   loseSceneIndex: 4
-  timeRemaining: 15
+  timeRemaining: 30
 --- !u!212 &1893269867
 SpriteRenderer:
   serializedVersion: 2
