@@ -74,7 +74,7 @@ public class CatEater : MonoBehaviour
             PlayMeowSound();
             Destroy(other.gameObject);
 
-            if (ballCount >= 6)
+            if (ballCount >= 4)
             {
                 WinGame();
             }
